@@ -282,7 +282,9 @@ class CampaignBotClient(discord.Client):
                 
             else:
                 edit_cmd = cmd[0]
-                edit_strs = cmd[1:].split(" ", 1)
+                cmd_s = cmd[1:].strip()
+                edit_strs = cmd_s.split(maxsplit=1)
+                dprint(edit_strs)
                 filename = edit_strs[0]
                 
                 if edit_cmd == '+':
